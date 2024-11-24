@@ -59,8 +59,7 @@ VertexOutput_vert_main vert_main()
     out_.perspective_centroid = 2197.0;
     out_.perspective_sample = 2744.0;
     out_.perspective_center = 2812.0;
-    FragmentInput _e41 = out_;
-    const FragmentInput fragmentinput = _e41;
+    const FragmentInput fragmentinput = out_;
     const VertexOutput_vert_main fragmentinput_1 = { fragmentinput._flat, fragmentinput.flat_first, fragmentinput.flat_either, fragmentinput._linear, fragmentinput.linear_centroid, fragmentinput.linear_sample, fragmentinput.linear_center, fragmentinput.perspective, fragmentinput.perspective_centroid, fragmentinput.perspective_sample, fragmentinput.perspective_center, fragmentinput.position };
     return fragmentinput_1;
 }

@@ -33,8 +33,5 @@ float4 derivatives(FragmentInput_derivatives fragmentinput_derivatives) : SV_Tar
     float4 _e12 = fwidth(foo);
     z = _e12;
     const bool _e13 = test_any_and_all_for_bool();
-    float4 _e14 = x;
-    float4 _e15 = y;
-    float4 _e17 = z;
-    return ((_e14 + _e15) * _e17);
+    return ((x + y) * z);
 }

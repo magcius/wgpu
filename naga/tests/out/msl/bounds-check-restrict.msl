@@ -25,8 +25,7 @@ float index_array(
     device Globals const& globals,
     constant _mslBufferSizes& _buffer_sizes
 ) {
-    float _e4 = globals.a.inner[metal::min(unsigned(i), 9u)];
-    return _e4;
+    return globals.a.inner[metal::min(unsigned(i), 9u)];
 }
 
 float index_dynamic_array(
@@ -34,8 +33,7 @@ float index_dynamic_array(
     device Globals const& globals,
     constant _mslBufferSizes& _buffer_sizes
 ) {
-    float _e4 = globals.d[metal::min(unsigned(i_1), (_buffer_sizes.size0 - 112 - 4) / 4)];
-    return _e4;
+    return globals.d[metal::min(unsigned(i_1), (_buffer_sizes.size0 - 112 - 4) / 4)];
 }
 
 float index_vector(
@@ -43,8 +41,7 @@ float index_vector(
     device Globals const& globals,
     constant _mslBufferSizes& _buffer_sizes
 ) {
-    float _e4 = globals.v[metal::min(unsigned(i_2), 3u)];
-    return _e4;
+    return globals.v[metal::min(unsigned(i_2), 3u)];
 }
 
 float index_vector_by_value(
@@ -59,8 +56,7 @@ metal::float4 index_matrix(
     device Globals const& globals,
     constant _mslBufferSizes& _buffer_sizes
 ) {
-    metal::float4 _e4 = globals.m[metal::min(unsigned(i_4), 2u)];
-    return _e4;
+    return globals.m[metal::min(unsigned(i_4), 2u)];
 }
 
 float index_twice(
@@ -69,8 +65,7 @@ float index_twice(
     device Globals const& globals,
     constant _mslBufferSizes& _buffer_sizes
 ) {
-    float _e6 = globals.m[metal::min(unsigned(i_5), 2u)][metal::min(unsigned(j), 3u)];
-    return _e6;
+    return globals.m[metal::min(unsigned(i_5), 2u)][metal::min(unsigned(j), 3u)];
 }
 
 float index_expensive(
@@ -78,18 +73,14 @@ float index_expensive(
     device Globals const& globals,
     constant _mslBufferSizes& _buffer_sizes
 ) {
-    float _e11 = globals.a.inner[metal::min(unsigned(static_cast<int>(metal::sin(static_cast<float>(i_6) / 100.0) * 100.0)), 9u)];
-    return _e11;
+    return globals.a.inner[metal::min(unsigned(static_cast<int>(metal::sin(static_cast<float>(i_6) / 100.0) * 100.0)), 9u)];
 }
 
 float index_in_bounds(
     device Globals const& globals,
     constant _mslBufferSizes& _buffer_sizes
 ) {
-    float _e3 = globals.a.inner[9];
-    float _e7 = globals.v.w;
-    float _e13 = globals.m[2].w;
-    return (_e3 + _e7) + _e13;
+    return (globals.a.inner[9] + globals.v.w) + globals.m[2].w;
 }
 
 void set_array(
@@ -168,8 +159,7 @@ float index_dynamic_array_constant_index(
     device Globals const& globals,
     constant _mslBufferSizes& _buffer_sizes
 ) {
-    float _e3 = globals.d[metal::min(unsigned(1000), (_buffer_sizes.size0 - 112 - 4) / 4)];
-    return _e3;
+    return globals.d[metal::min(unsigned(1000), (_buffer_sizes.size0 - 112 - 4) / 4)];
 }
 
 void set_dynamic_array_constant_index(

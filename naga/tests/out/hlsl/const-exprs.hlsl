@@ -39,15 +39,9 @@ void non_constant_initializers()
     int z = 70;
     int4 out_3 = (int4)0;
 
-    int _e2 = w;
-    x = _e2;
-    int _e4 = x;
-    y = _e4;
-    int _e8 = w;
-    int _e9 = x;
-    int _e10 = y;
-    int _e11 = z;
-    out_3 = int4(_e8, _e9, _e10, _e11);
+    x = w;
+    y = x;
+    out_3 = int4(w, x, y, z);
     return;
 }
 

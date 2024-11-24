@@ -152,8 +152,7 @@ void main() {
     do {
         pos = 1;
     } while(false);
-    int _e4 = pos;
-    switch(_e4) {
+    switch(pos) {
         case 1: {
             pos = 0;
             break;
@@ -185,8 +184,7 @@ void main() {
             break;
         }
     }
-    int _e11 = pos;
-    switch(_e11) {
+    switch(pos) {
         case 1: {
             pos = 0;
             break;

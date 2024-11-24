@@ -24,14 +24,10 @@ fn splat(m: f32, n: i32) -> vec4<f32> {
 fn splat_assignment() -> vec2<f32> {
     var a: vec2<f32> = vec2(2f);
 
-    let _e4 = a;
-    a = (_e4 + vec2(1f));
-    let _e8 = a;
-    a = (_e8 - vec2(3f));
-    let _e12 = a;
-    a = (_e12 / vec2(4f));
-    let _e15 = a;
-    return _e15;
+    a = (a + vec2(1f));
+    a = (a - vec2(3f));
+    a = (a / vec2(4f));
+    return a;
 }
 
 fn bool_cast(x: vec3<f32>) -> vec3<f32> {
@@ -196,36 +192,20 @@ fn assignment() {
     var vec0_: vec3<i32> = vec3<i32>();
 
     a_1 = 1i;
-    let _e5 = a_1;
-    a_1 = (_e5 + 1i);
-    let _e7 = a_1;
-    a_1 = (_e7 - 1i);
-    let _e9 = a_1;
-    let _e10 = a_1;
-    a_1 = (_e10 * _e9);
-    let _e12 = a_1;
-    let _e13 = a_1;
-    a_1 = (_e13 / _e12);
-    let _e15 = a_1;
-    a_1 = (_e15 % 1i);
-    let _e17 = a_1;
-    a_1 = (_e17 & 0i);
-    let _e19 = a_1;
-    a_1 = (_e19 | 0i);
-    let _e21 = a_1;
-    a_1 = (_e21 ^ 0i);
-    let _e23 = a_1;
-    a_1 = (_e23 << 2u);
-    let _e25 = a_1;
-    a_1 = (_e25 >> 1u);
-    let _e28 = a_1;
-    a_1 = (_e28 + 1i);
-    let _e31 = a_1;
-    a_1 = (_e31 - 1i);
-    let _e37 = vec0_[1i];
-    vec0_[1i] = (_e37 + 1i);
-    let _e41 = vec0_[1i];
-    vec0_[1i] = (_e41 - 1i);
+    a_1 = (a_1 + 1i);
+    a_1 = (a_1 - 1i);
+    a_1 = (a_1 * a_1);
+    a_1 = (a_1 / a_1);
+    a_1 = (a_1 % 1i);
+    a_1 = (a_1 & 0i);
+    a_1 = (a_1 | 0i);
+    a_1 = (a_1 ^ 0i);
+    a_1 = (a_1 << 2u);
+    a_1 = (a_1 >> 1u);
+    a_1 = (a_1 + 1i);
+    a_1 = (a_1 - 1i);
+    vec0_[1i] = (vec0_[1i] + 1i);
+    vec0_[1i] = (vec0_[1i] - 1i);
     return;
 }
 

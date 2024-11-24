@@ -44,12 +44,9 @@ fn main_1() {
     var a_1: f32;
     var b: f32;
 
-    let _e35 = in_array_2[1];
-    from_input_array = _e35;
-    let _e41 = array_2d[0][0];
-    a_1 = _e41;
-    let _e57 = array_toomanyd[0][0][0][0][0][0][0];
-    b = _e57;
+    from_input_array = in_array_2[1];
+    a_1 = array_2d[0][0];
+    b = array_toomanyd[0][0][0][0][0][0][0];
     out_array[0i] = vec4(2f);
     return;
 }
@@ -61,9 +58,5 @@ fn main(@location(0) position: vec2<f32>, @location(1) a: vec2<f32>, @location(2
     in_array_2[0] = in_array;
     in_array_2[1] = in_array_1;
     main_1();
-    let _e30 = frag.position;
-    let _e32 = frag.a;
-    let _e35 = out_array[0];
-    let _e37 = out_array[1];
-    return FragmentOutput(_e30, _e32, _e35, _e37);
+    return FragmentOutput(frag.position, frag.a, out_array[0], out_array[1]);
 }

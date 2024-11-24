@@ -12,36 +12,28 @@ fn test_atomic_compare_exchange_i64_() {
     var exchanged: bool;
 
     loop {
-        let _e2 = i;
-        if (_e2 < SIZE) {
+        if (i < SIZE) {
         } else {
             break;
         }
         {
-            let _e6 = i;
-            let _e8 = atomicLoad((&arr_i64_[_e6]));
-            old = _e8;
+            old = atomicLoad((&arr_i64_[i]));
             exchanged = false;
             loop {
-                let _e12 = exchanged;
-                if !(_e12) {
+                if !(exchanged) {
                 } else {
                     break;
                 }
                 {
-                    let _e14 = old;
-                    let new_ = bitcast<i64>((_e14 + 10li));
-                    let _e19 = i;
-                    let _e21 = old;
-                    let _e22 = atomicCompareExchangeWeak((&arr_i64_[_e19]), _e21, new_);
+                    let new_ = bitcast<i64>((old + 10li));
+                    let _e22 = atomicCompareExchangeWeak((&arr_i64_[i]), old, new_);
                     old = _e22.old_value;
                     exchanged = _e22.exchanged;
                 }
             }
         }
         continuing {
-            let _e26 = i;
-            i = (_e26 + 1u);
+            i = (i + 1u);
         }
     }
     return;
@@ -54,36 +46,28 @@ fn test_atomic_compare_exchange_u64_() {
     var exchanged_1: bool;
 
     loop {
-        let _e2 = i_1;
-        if (_e2 < SIZE) {
+        if (i_1 < SIZE) {
         } else {
             break;
         }
         {
-            let _e6 = i_1;
-            let _e8 = atomicLoad((&arr_u64_[_e6]));
-            old_1 = _e8;
+            old_1 = atomicLoad((&arr_u64_[i_1]));
             exchanged_1 = false;
             loop {
-                let _e12 = exchanged_1;
-                if !(_e12) {
+                if !(exchanged_1) {
                 } else {
                     break;
                 }
                 {
-                    let _e14 = old_1;
-                    let new_1 = bitcast<u64>((_e14 + 10lu));
-                    let _e19 = i_1;
-                    let _e21 = old_1;
-                    let _e22 = atomicCompareExchangeWeak((&arr_u64_[_e19]), _e21, new_1);
+                    let new_1 = bitcast<u64>((old_1 + 10lu));
+                    let _e22 = atomicCompareExchangeWeak((&arr_u64_[i_1]), old_1, new_1);
                     old_1 = _e22.old_value;
                     exchanged_1 = _e22.exchanged;
                 }
             }
         }
         continuing {
-            let _e26 = i_1;
-            i_1 = (_e26 + 1u);
+            i_1 = (i_1 + 1u);
         }
     }
     return;

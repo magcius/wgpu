@@ -14,8 +14,7 @@ var<storage> global_1: type_4;
 var global_2: texture_depth_2d;
 
 fn function() {
-    let _e6 = global_1.member;
-    let _e7 = textureLoad(global_2, _e6, 0i);
+    let _e7 = textureLoad(global_2, global_1.member, 0i);
     global.member = vec4(_e7).x;
     return;
 }

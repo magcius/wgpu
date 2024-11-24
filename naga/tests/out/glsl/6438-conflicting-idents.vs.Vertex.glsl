@@ -14,9 +14,8 @@ void main() {
     vec2 xy = _p2vs_location0;
     OurVertexShaderOutput vsOutput = OurVertexShaderOutput(vec4(0.0), vec2(0.0));
     vsOutput.position = vec4(xy, 0.0, 1.0);
-    OurVertexShaderOutput _e6 = vsOutput;
-    gl_Position = _e6.position;
-    _vs2fs_location0 = _e6.texcoord;
+    gl_Position = vsOutput.position;
+    _vs2fs_location0 = vsOutput.texcoord;
     gl_Position.yz = vec2(-gl_Position.y, gl_Position.z * 2.0 - gl_Position.w);
     return;
 }

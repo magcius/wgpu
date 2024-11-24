@@ -27,14 +27,10 @@ float2 splat_assignment()
 {
     float2 a = (2.0).xx;
 
-    float2 _e4 = a;
-    a = (_e4 + (1.0).xx);
-    float2 _e8 = a;
-    a = (_e8 - (3.0).xx);
-    float2 _e12 = a;
-    a = (_e12 / (4.0).xx);
-    float2 _e15 = a;
-    return _e15;
+    a = (a + (1.0).xx);
+    a = (a - (3.0).xx);
+    a = (a / (4.0).xx);
+    return a;
 }
 
 float3 bool_cast(float3 x)
@@ -221,36 +217,20 @@ void assignment()
     int3 vec0_ = ZeroValueint3();
 
     a_1 = 1;
-    int _e5 = a_1;
-    a_1 = (_e5 + 1);
-    int _e7 = a_1;
-    a_1 = (_e7 - 1);
-    int _e9 = a_1;
-    int _e10 = a_1;
-    a_1 = (_e10 * _e9);
-    int _e12 = a_1;
-    int _e13 = a_1;
-    a_1 = (_e13 / _e12);
-    int _e15 = a_1;
-    a_1 = (_e15 % 1);
-    int _e17 = a_1;
-    a_1 = (_e17 & 0);
-    int _e19 = a_1;
-    a_1 = (_e19 | 0);
-    int _e21 = a_1;
-    a_1 = (_e21 ^ 0);
-    int _e23 = a_1;
-    a_1 = (_e23 << 2u);
-    int _e25 = a_1;
-    a_1 = (_e25 >> 1u);
-    int _e28 = a_1;
-    a_1 = (_e28 + 1);
-    int _e31 = a_1;
-    a_1 = (_e31 - 1);
-    int _e37 = vec0_[1];
-    vec0_[1] = (_e37 + 1);
-    int _e41 = vec0_[1];
-    vec0_[1] = (_e41 - 1);
+    a_1 = (a_1 + 1);
+    a_1 = (a_1 - 1);
+    a_1 = (a_1 * a_1);
+    a_1 = (a_1 / a_1);
+    a_1 = (a_1 % 1);
+    a_1 = (a_1 & 0);
+    a_1 = (a_1 | 0);
+    a_1 = (a_1 ^ 0);
+    a_1 = (a_1 << 2u);
+    a_1 = (a_1 >> 1u);
+    a_1 = (a_1 + 1);
+    a_1 = (a_1 - 1);
+    vec0_[1] = (vec0_[1] + 1);
+    vec0_[1] = (vec0_[1] - 1);
     return;
 }
 

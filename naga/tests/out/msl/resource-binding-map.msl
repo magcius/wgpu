@@ -41,8 +41,7 @@ fragment entry_point_twoOutput entry_point_two(
 , metal::sampler s1_ [[sampler(0)]]
 , constant metal::float2& uniformOne [[buffer(0)]]
 ) {
-    metal::float2 _e3 = uniformOne;
-    metal::float4 _e4 = t1_.sample(s1_, _e3);
+    metal::float4 _e4 = t1_.sample(s1_, uniformOne);
     return entry_point_twoOutput { _e4 };
 }
 
@@ -65,10 +64,7 @@ fragment entry_point_threeOutput entry_point_three(
         metal::min_filter::linear,
         metal::coord::normalized
     );
-    metal::float2 _e3 = uniformTwo;
-    metal::float2 _e5 = uniformOne;
-    metal::float4 _e7 = t1_.sample(s1_, _e3 + _e5);
-    metal::float2 _e11 = uniformOne;
-    metal::float4 _e12 = t2_.sample(s2_, _e11);
+    metal::float4 _e7 = t1_.sample(s1_, uniformTwo + uniformOne);
+    metal::float4 _e12 = t2_.sample(s2_, uniformOne);
     return entry_point_threeOutput { _e7 + _e12 };
 }

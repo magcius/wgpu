@@ -43,34 +43,22 @@ fn test_matrix_within_struct_accesses() {
     var idx: i32 = 1i;
     var t: Baz = Baz(mat3x2<f32>(vec2(1f), vec2(2f), vec2(3f)));
 
-    let _e3 = idx;
-    idx = (_e3 - 1i);
+    idx = (idx - 1i);
     let l0_ = baz.m;
     let l1_ = baz.m[0];
-    let _e14 = idx;
-    let l2_ = baz.m[_e14];
+    let l2_ = baz.m[idx];
     let l3_ = baz.m[0][1];
-    let _e25 = idx;
-    let l4_ = baz.m[0][_e25];
-    let _e30 = idx;
-    let l5_ = baz.m[_e30][1];
-    let _e36 = idx;
-    let _e38 = idx;
-    let l6_ = baz.m[_e36][_e38];
-    let _e51 = idx;
-    idx = (_e51 + 1i);
+    let l4_ = baz.m[0][idx];
+    let l5_ = baz.m[idx][1];
+    let l6_ = baz.m[idx][idx];
+    idx = (idx + 1i);
     t.m = mat3x2<f32>(vec2(6f), vec2(5f), vec2(4f));
     t.m[0] = vec2(9f);
-    let _e66 = idx;
-    t.m[_e66] = vec2(90f);
+    t.m[idx] = vec2(90f);
     t.m[0][1] = 10f;
-    let _e76 = idx;
-    t.m[0][_e76] = 20f;
-    let _e80 = idx;
-    t.m[_e80][1] = 30f;
-    let _e85 = idx;
-    let _e87 = idx;
-    t.m[_e85][_e87] = 40f;
+    t.m[0][idx] = 20f;
+    t.m[idx][1] = 30f;
+    t.m[idx][idx] = 40f;
     return;
 }
 
@@ -78,42 +66,29 @@ fn test_matrix_within_array_within_struct_accesses() {
     var idx_1: i32 = 1i;
     var t_1: MatCx2InArray = MatCx2InArray(array<mat4x2<f32>, 2>());
 
-    let _e3 = idx_1;
-    idx_1 = (_e3 - 1i);
+    idx_1 = (idx_1 - 1i);
     let l0_1 = nested_mat_cx2_.am;
     let l1_1 = nested_mat_cx2_.am[0];
     let l2_1 = nested_mat_cx2_.am[0][0];
-    let _e20 = idx_1;
-    let l3_1 = nested_mat_cx2_.am[0][_e20];
+    let l3_1 = nested_mat_cx2_.am[0][idx_1];
     let l4_1 = nested_mat_cx2_.am[0][0][1];
-    let _e33 = idx_1;
-    let l5_1 = nested_mat_cx2_.am[0][0][_e33];
-    let _e39 = idx_1;
-    let l6_1 = nested_mat_cx2_.am[0][_e39][1];
-    let _e46 = idx_1;
-    let _e48 = idx_1;
-    let l7_ = nested_mat_cx2_.am[0][_e46][_e48];
-    let _e55 = idx_1;
-    idx_1 = (_e55 + 1i);
+    let l5_1 = nested_mat_cx2_.am[0][0][idx_1];
+    let l6_1 = nested_mat_cx2_.am[0][idx_1][1];
+    let l7_ = nested_mat_cx2_.am[0][idx_1][idx_1];
+    idx_1 = (idx_1 + 1i);
     t_1.am = array<mat4x2<f32>, 2>();
     t_1.am[0] = mat4x2<f32>(vec2(8f), vec2(7f), vec2(6f), vec2(5f));
     t_1.am[0][0] = vec2(9f);
-    let _e77 = idx_1;
-    t_1.am[0][_e77] = vec2(90f);
+    t_1.am[0][idx_1] = vec2(90f);
     t_1.am[0][0][1] = 10f;
-    let _e89 = idx_1;
-    t_1.am[0][0][_e89] = 20f;
-    let _e94 = idx_1;
-    t_1.am[0][_e94][1] = 30f;
-    let _e100 = idx_1;
-    let _e102 = idx_1;
-    t_1.am[0][_e100][_e102] = 40f;
+    t_1.am[0][0][idx_1] = 20f;
+    t_1.am[0][idx_1][1] = 30f;
+    t_1.am[0][idx_1][idx_1] = 40f;
     return;
 }
 
 fn read_from_private(foo_1: ptr<function, f32>) -> f32 {
-    let _e1 = (*foo_1);
-    return _e1;
+    return (*foo_1);
 }
 
 fn test_arr_as_arg(a: array<array<f32, 10>, 5>) -> f32 {
@@ -131,8 +106,7 @@ fn assign_array_through_ptr_fn(foo_2: ptr<function, array<vec4<f32>, 2>>) {
 }
 
 fn fetch_arg_ptr_member(p_1: ptr<function, AssignToMember>) -> u32 {
-    let _e2 = (*p_1).x;
-    return _e2;
+    return (*p_1).x;
 }
 
 fn assign_to_arg_ptr_member(p_2: ptr<function, AssignToMember>) {
@@ -141,8 +115,7 @@ fn assign_to_arg_ptr_member(p_2: ptr<function, AssignToMember>) {
 }
 
 fn fetch_arg_ptr_array_element(p_3: ptr<function, array<u32, 4>>) -> u32 {
-    let _e2 = (*p_3)[1];
-    return _e2;
+    return (*p_3)[1];
 }
 
 fn assign_to_arg_ptr_array_element(p_4: ptr<function, array<u32, 4>>) {

@@ -10,23 +10,14 @@ fn main() {
     var f3_: vec3<f32> = vec3(0f);
     var f4_: vec4<f32> = vec4(0f);
 
-    let _e27 = i2_;
-    u2_ = bitcast<vec2<u32>>(_e27);
-    let _e29 = i3_;
-    u3_ = bitcast<vec3<u32>>(_e29);
-    let _e31 = i4_;
-    u4_ = bitcast<vec4<u32>>(_e31);
-    let _e33 = u2_;
-    i2_ = bitcast<vec2<i32>>(_e33);
-    let _e35 = u3_;
-    i3_ = bitcast<vec3<i32>>(_e35);
-    let _e37 = u4_;
-    i4_ = bitcast<vec4<i32>>(_e37);
-    let _e39 = i2_;
-    f2_ = bitcast<vec2<f32>>(_e39);
-    let _e41 = i3_;
-    f3_ = bitcast<vec3<f32>>(_e41);
-    let _e43 = i4_;
-    f4_ = bitcast<vec4<f32>>(_e43);
+    u2_ = bitcast<vec2<u32>>(i2_);
+    u3_ = bitcast<vec3<u32>>(i3_);
+    u4_ = bitcast<vec4<u32>>(i4_);
+    i2_ = bitcast<vec2<i32>>(u2_);
+    i3_ = bitcast<vec3<i32>>(u3_);
+    i4_ = bitcast<vec4<i32>>(u4_);
+    f2_ = bitcast<vec2<f32>>(i2_);
+    f3_ = bitcast<vec3<f32>>(i3_);
+    f4_ = bitcast<vec4<f32>>(i4_);
     return;
 }

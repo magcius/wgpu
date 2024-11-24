@@ -18,8 +18,6 @@ fn function() {
 fn main(@builtin(vertex_index) param: u32) -> @builtin(position) vec4<f32> {
     global_1 = i32(param);
     function();
-    let _e6 = global.member.y;
-    global.member.y = -(_e6);
-    let _e8 = global.member;
-    return _e8;
+    global.member.y = -(global.member.y);
+    return global.member;
 }

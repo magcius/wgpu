@@ -26,8 +26,7 @@ fn main_vec4vec3_() -> FragmentOutputVec4Vec3_ {
     output.vec3f = vec3(0f);
     output.vec3i = vec3(0i);
     output.vec3u = vec3(0u);
-    let _e19 = output;
-    return _e19;
+    return output;
 }
 
 @fragment 
@@ -40,6 +39,5 @@ fn main_vec2scalar() -> FragmentOutputVec2Scalar {
     output_1.scalarf = 0f;
     output_1.scalari = 0i;
     output_1.scalaru = 0u;
-    let _e16 = output_1;
-    return _e16;
+    return output_1;
 }

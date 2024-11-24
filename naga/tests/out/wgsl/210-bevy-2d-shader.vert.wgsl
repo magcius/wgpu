@@ -30,15 +30,11 @@ var<private> gl_Position: vec4<f32>;
 fn main_1() {
     var position: vec3<f32>;
 
-    let _e10 = Vertex_Uv_1;
-    v_Uv = _e10;
-    let _e11 = Vertex_Position_1;
+    v_Uv = Vertex_Uv_1;
     let _e12 = global_2.size;
-    position = (_e11 * vec3<f32>(_e12.x, _e12.y, 1f));
-    let _e20 = global.ViewProj;
-    let _e21 = global_1.Model;
+    position = (Vertex_Position_1 * vec3<f32>(_e12.x, _e12.y, 1f));
     let _e23 = position;
-    gl_Position = ((_e20 * _e21) * vec4<f32>(_e23.x, _e23.y, _e23.z, 1f));
+    gl_Position = ((global.ViewProj * global_1.Model) * vec4<f32>(_e23.x, _e23.y, _e23.z, 1f));
     return;
 }
 
@@ -48,7 +44,5 @@ fn main(@location(0) Vertex_Position: vec3<f32>, @location(1) Vertex_Normal: vec
     Vertex_Normal_1 = Vertex_Normal;
     Vertex_Uv_1 = Vertex_Uv;
     main_1();
-    let _e21 = v_Uv;
-    let _e23 = gl_Position;
-    return VertexOutput(_e21, _e23);
+    return VertexOutput(v_Uv, gl_Position);
 }

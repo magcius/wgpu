@@ -26,8 +26,7 @@ FragmentOutputVec4Vec3_ main_vec4vec3_()
     output.vec3f = (0.0).xxx;
     output.vec3i = (0).xxx;
     output.vec3u = (0u).xxx;
-    FragmentOutputVec4Vec3_ _e19 = output;
-    const FragmentOutputVec4Vec3_ fragmentoutputvec4vec3_ = _e19;
+    const FragmentOutputVec4Vec3_ fragmentoutputvec4vec3_ = output;
     return fragmentoutputvec4vec3_;
 }
 
@@ -41,7 +40,6 @@ FragmentOutputVec2Scalar main_vec2scalar()
     output_1.scalarf = 0.0;
     output_1.scalari = 0;
     output_1.scalaru = 0u;
-    FragmentOutputVec2Scalar _e16 = output_1;
-    const FragmentOutputVec2Scalar fragmentoutputvec2scalar = _e16;
+    const FragmentOutputVec2Scalar fragmentoutputvec2scalar = output_1;
     return fragmentoutputvec2scalar;
 }

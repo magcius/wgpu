@@ -16,23 +16,13 @@ fn Fma(d: ptr<function, Mat4x3_>, m: Mat4x3_, s: f32) {
 
     m_1 = m;
     s_1 = s;
-    let _e6 = (*d);
-    let _e8 = m_1;
-    let _e10 = s_1;
-    (*d).mx = (_e6.mx + (_e8.mx * _e10));
-    let _e14 = (*d);
-    let _e16 = m_1;
-    let _e18 = s_1;
-    (*d).my = (_e14.my + (_e16.my * _e18));
-    let _e22 = (*d);
-    let _e24 = m_1;
-    let _e26 = s_1;
-    (*d).mz = (_e22.mz + (_e24.mz * _e26));
+    (*d).mx = ((*d).mx + (m_1.mx * s_1));
+    (*d).my = ((*d).my + (m_1.my * s_1));
+    (*d).mz = ((*d).mz + (m_1.mz * s_1));
     return;
 }
 
 fn main_1() {
-    let _e1 = o_color;
     o_color.x = 1f;
     o_color.y = 1f;
     o_color.z = 1f;
@@ -43,6 +33,5 @@ fn main_1() {
 @fragment 
 fn main() -> FragmentOutput {
     main_1();
-    let _e3 = o_color;
-    return FragmentOutput(_e3);
+    return FragmentOutput(o_color);
 }

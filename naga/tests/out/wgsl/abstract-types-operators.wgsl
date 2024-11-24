@@ -46,31 +46,17 @@ fn runtime_values() {
     var plus_u_uai: u32;
     var plus_u_u_u: u32;
 
-    let _e8 = f;
-    plus_faf_f = (1f + _e8);
-    let _e14 = f;
-    plus_fai_f = (1f + _e14);
-    let _e18 = f;
-    plus_f_faf = (_e18 + 2f);
-    let _e22 = f;
-    plus_f_fai = (_e22 + 2f);
-    let _e26 = f;
-    let _e27 = f;
-    plus_f_f_f = (_e26 + _e27);
-    let _e31 = i;
-    plus_iai_i = (1i + _e31);
-    let _e35 = i;
-    plus_i_iai = (_e35 + 2i);
-    let _e39 = i;
-    let _e40 = i;
-    plus_i_i_i = (_e39 + _e40);
-    let _e44 = u;
-    plus_uai_u = (1u + _e44);
-    let _e48 = u;
-    plus_u_uai = (_e48 + 2u);
-    let _e52 = u;
-    let _e53 = u;
-    plus_u_u_u = (_e52 + _e53);
+    plus_faf_f = (1f + f);
+    plus_fai_f = (1f + f);
+    plus_f_faf = (f + 2f);
+    plus_f_fai = (f + 2f);
+    plus_f_f_f = (f + f);
+    plus_iai_i = (1i + i);
+    plus_i_iai = (i + 2i);
+    plus_i_i_i = (i + i);
+    plus_uai_u = (1u + u);
+    plus_u_uai = (u + 2u);
+    plus_u_u_u = (u + u);
     return;
 }
 

@@ -26,8 +26,5 @@ var<uniform> input3_: Test3_;
 
 @vertex 
 fn vertex() -> @builtin(position) vec4<f32> {
-    let _e4 = input1_.b;
-    let _e8 = input2_.b;
-    let _e12 = input3_.b;
-    return (((vec4(1f) * _e4) * _e8) * _e12);
+    return (((vec4(1f) * input1_.b) * input2_.b) * input3_.b);
 }

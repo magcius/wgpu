@@ -27,8 +27,7 @@ void main() {
     vec4 param = gl_FragCoord;
     global = param;
     function();
-    vec4 _e3 = global_1;
-    _fs2p_location0 = _e3;
+    _fs2p_location0 = global_1;
     return;
 }
 

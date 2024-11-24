@@ -89,8 +89,7 @@ void test_msl_packed_vec3_()
     alignment.Store3(0, asuint((1.0).xxx));
     alignment.Store(0+0, asuint(1.0));
     alignment.Store(0+0, asuint(2.0));
-    int _e16 = idx;
-    alignment.Store(_e16*4+0, asuint(3.0));
+    alignment.Store(idx*4+0, asuint(3.0));
     FooStruct data = ConstructFooStruct(asfloat(alignment.Load3(0)), asfloat(alignment.Load(12)));
     float3 l0_ = data.v3_;
     float2 l1_ = data.v3_.zx;
@@ -120,20 +119,12 @@ void main(uint3 __local_invocation_id : SV_GroupThreadID)
     bool at = true;
 
     test_msl_packed_vec3_();
-    float4x2 _e5 = ((float4x2)global_nested_arrays_of_matrices_4x2_[0][0]);
-    float4 _e10 = global_nested_arrays_of_matrices_2x4_[0][0][0];
-    wg[7] = mul(_e10, _e5).x;
-    float3x2 _e16 = ((float3x2)global_mat);
-    float3 _e18 = global_vec;
-    wg[6] = mul(_e18, _e16).x;
-    float _e26 = asfloat(dummy.Load(4+8));
-    wg[5] = _e26;
-    float _e32 = float_vecs[0].w;
-    wg[4] = _e32;
-    float _e37 = asfloat(alignment.Load(12));
-    wg[3] = _e37;
-    float _e43 = asfloat(alignment.Load(0+0));
-    wg[2] = _e43;
+    wg[7] = mul(global_nested_arrays_of_matrices_2x4_[0][0][0], ((float4x2)global_nested_arrays_of_matrices_4x2_[0][0])).x;
+    wg[6] = mul(global_vec, ((float3x2)global_mat)).x;
+    wg[5] = asfloat(dummy.Load(4+8));
+    wg[4] = float_vecs[0].w;
+    wg[3] = asfloat(alignment.Load(12));
+    wg[2] = asfloat(alignment.Load(0+0));
     alignment.Store(12, asuint(4.0));
     wg[1] = float(((NagaBufferLength(dummy) - 0) / 8));
     at_1 = 2u;

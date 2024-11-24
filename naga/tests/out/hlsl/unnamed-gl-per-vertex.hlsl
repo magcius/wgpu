@@ -34,8 +34,6 @@ float4 main(uint param : SV_VertexID) : SV_Position
 {
     global_1 = int(param);
     function();
-    float _e6 = global.member.y;
-    global.member.y = -(_e6);
-    float4 _e8 = global.member;
-    return _e8;
+    global.member.y = -(global.member.y);
+    return global.member;
 }

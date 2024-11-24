@@ -13,6 +13,5 @@ fn function() {
 @fragment 
 fn main() -> @location(0) vec4<f32> {
     function();
-    let _e1 = global_2;
-    return _e1;
+    return global_2;
 }

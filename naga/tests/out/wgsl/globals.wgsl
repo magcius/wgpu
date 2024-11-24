@@ -32,8 +32,7 @@ fn test_msl_packed_vec3_() {
     alignment.v3_ = vec3(1f);
     alignment.v3_.x = 1f;
     alignment.v3_.x = 2f;
-    let _e16 = idx;
-    alignment.v3_[_e16] = 3f;
+    alignment.v3_[idx] = 3f;
     let data = alignment;
     let l0_ = data.v3_;
     let l1_ = data.v3_.zx;
@@ -50,20 +49,12 @@ fn main() {
     var at: bool = true;
 
     test_msl_packed_vec3_();
-    let _e5 = global_nested_arrays_of_matrices_4x2_[0][0];
-    let _e10 = global_nested_arrays_of_matrices_2x4_[0][0][0];
-    wg[7] = (_e5 * _e10).x;
-    let _e16 = global_mat;
-    let _e18 = global_vec;
-    wg[6] = (_e16 * _e18).x;
-    let _e26 = dummy[1].y;
-    wg[5] = _e26;
-    let _e32 = float_vecs[0].w;
-    wg[4] = _e32;
-    let _e37 = alignment.v1_;
-    wg[3] = _e37;
-    let _e43 = alignment.v3_.x;
-    wg[2] = _e43;
+    wg[7] = (global_nested_arrays_of_matrices_4x2_[0][0] * global_nested_arrays_of_matrices_2x4_[0][0][0]).x;
+    wg[6] = (global_mat * global_vec).x;
+    wg[5] = dummy[1].y;
+    wg[4] = float_vecs[0].w;
+    wg[3] = alignment.v1_;
+    wg[2] = alignment.v3_.x;
     alignment.v1_ = 4f;
     wg[1] = f32(arrayLength((&dummy)));
     atomicStore((&at_1), 2u);

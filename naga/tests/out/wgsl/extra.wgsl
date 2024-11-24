@@ -12,8 +12,7 @@ var<push_constant> pc: PushConstants;
 
 @fragment 
 fn main(in: FragmentIn) -> @location(0) vec4<f32> {
-    let _e4 = pc.index;
-    if (in.primitive_index == _e4) {
+    if (in.primitive_index == pc.index) {
         return in.color;
     } else {
         return vec4<f32>((vec3(1f) - in.color.xyz), in.color.w);

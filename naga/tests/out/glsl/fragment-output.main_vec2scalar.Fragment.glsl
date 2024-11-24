@@ -34,13 +34,12 @@ void main() {
     output_1.scalarf = 0.0;
     output_1.scalari = 0;
     output_1.scalaru = 0u;
-    FragmentOutputVec2Scalar _e16 = output_1;
-    _fs2p_location0 = _e16.vec2f;
-    _fs2p_location1 = _e16.vec2i;
-    _fs2p_location2 = _e16.vec2u;
-    _fs2p_location3 = _e16.scalarf;
-    _fs2p_location4 = _e16.scalari;
-    _fs2p_location5 = _e16.scalaru;
+    _fs2p_location0 = output_1.vec2f;
+    _fs2p_location1 = output_1.vec2i;
+    _fs2p_location2 = output_1.vec2u;
+    _fs2p_location3 = output_1.scalarf;
+    _fs2p_location4 = output_1.scalari;
+    _fs2p_location5 = output_1.scalaru;
     return;
 }
 

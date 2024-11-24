@@ -12,42 +12,32 @@ fn collatz_iterations(n: u32) -> u32 {
 
     n_1 = n;
     loop {
-        let _e7 = n_1;
-        if !((_e7 != 1u)) {
+        if !((n_1 != 1u)) {
             break;
         }
         {
-            let _e12 = n_1;
-            let _e14 = f32(_e12);
+            let _e14 = f32(n_1);
             if ((_e14 - (floor((_e14 / 2f)) * 2f)) == 0f) {
                 {
-                    let _e23 = n_1;
-                    n_1 = (_e23 / 2u);
+                    n_1 = (n_1 / 2u);
                 }
             } else {
                 {
-                    let _e28 = n_1;
-                    n_1 = ((3u * _e28) + 1u);
+                    n_1 = ((3u * n_1) + 1u);
                 }
             }
-            let _e34 = i;
-            i = (_e34 + 1u);
+            i = (i + 1u);
         }
     }
-    let _e37 = i;
-    return _e37;
+    return i;
 }
 
 fn main_1() {
     var index: u32;
 
-    let _e3 = gl_GlobalInvocationID_1;
-    index = _e3.x;
-    let _e6 = index;
-    let _e8 = index;
-    let _e10 = global.indices[_e8];
-    let _e11 = collatz_iterations(_e10);
-    global.indices[_e6] = _e11;
+    index = gl_GlobalInvocationID_1.x;
+    let _e11 = collatz_iterations(global.indices[index]);
+    global.indices[index] = _e11;
     return;
 }
 

@@ -112,6 +112,7 @@ By @ErichDonGubler in [#6456](https://github.com/gfx-rs/wgpu/pull/6456), [#6148]
 
 - Show types of LHS and RHS in binary operation type mismatch errors. By @ErichDonGubler in [#6450](https://github.com/gfx-rs/wgpu/pull/6450).
 - The GLSL parser now uses less expressions for function calls. By @magcius in [#6604](https://github.com/gfx-rs/wgpu/pull/6604).
+- Sets the bake count for loads back to 2, which really helps improve the readability of generated WGSL code. By @magcius in [#6605](https://github.com/gfx-rs/wgpu/pull/6605).
 
 #### General
 

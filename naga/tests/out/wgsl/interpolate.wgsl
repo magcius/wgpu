@@ -29,8 +29,7 @@ fn vert_main() -> FragmentInput {
     out.perspective_centroid = 2197f;
     out.perspective_sample = 2744f;
     out.perspective_center = 2812f;
-    let _e41 = out;
-    return _e41;
+    return out;
 }
 
 @fragment 

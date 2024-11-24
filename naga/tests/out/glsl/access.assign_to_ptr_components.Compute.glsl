@@ -24,8 +24,7 @@ struct AssignToMember {
 };
 
 float read_from_private(inout float foo_1) {
-    float _e1 = foo_1;
-    return _e1;
+    return foo_1;
 }
 
 float test_arr_as_arg(float a[5][10]) {
@@ -43,8 +42,7 @@ void assign_array_through_ptr_fn(inout vec4 foo_2[2]) {
 }
 
 uint fetch_arg_ptr_member(inout AssignToMember p_1) {
-    uint _e2 = p_1.x;
-    return _e2;
+    return p_1.x;
 }
 
 void assign_to_arg_ptr_member(inout AssignToMember p_2) {
@@ -53,8 +51,7 @@ void assign_to_arg_ptr_member(inout AssignToMember p_2) {
 }
 
 uint fetch_arg_ptr_array_element(inout uint p_3[4]) {
-    uint _e2 = p_3[1];
-    return _e2;
+    return p_3[1];
 }
 
 void assign_to_arg_ptr_array_element(inout uint p_4[4]) {

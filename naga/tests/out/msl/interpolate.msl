@@ -49,8 +49,7 @@ vertex vert_mainOutput vert_main(
     out.perspective_centroid = 2197.0;
     out.perspective_sample = 2744.0;
     out.perspective_center = 2812.0;
-    FragmentInput _e41 = out;
-    const auto _tmp = _e41;
+    const auto _tmp = out;
     return vert_mainOutput { _tmp.position, _tmp._flat, _tmp.flat_first, _tmp.flat_either, _tmp._linear, _tmp.linear_centroid, _tmp.linear_sample, _tmp.linear_center, _tmp.perspective, _tmp.perspective_centroid, _tmp.perspective_sample, _tmp.perspective_center };
 }
 

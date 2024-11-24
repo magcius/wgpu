@@ -24,10 +24,8 @@ void main() {
     uint param = uint(gl_VertexID);
     global_1 = int(param);
     function();
-    float _e6 = global.member.y;
-    global.member.y = -(_e6);
-    vec4 _e8 = global.member;
-    gl_Position = _e8;
+    global.member.y = -(global.member.y);
+    gl_Position = global.member;
     gl_Position.yz = vec2(-gl_Position.y, gl_Position.z * 2.0 - gl_Position.w);
     return;
 }

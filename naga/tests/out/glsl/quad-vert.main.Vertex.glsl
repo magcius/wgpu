@@ -26,8 +26,7 @@ layout(location = 0) in vec2 _p2vs_location0;
 layout(location = 0) smooth out vec2 _vs2fs_location0;
 
 void main_1() {
-    vec2 _e6 = a_uv_1;
-    v_uv = _e6;
+    v_uv = a_uv_1;
     vec2 _e7 = a_pos_1;
     unnamed.gen_gl_Position = vec4(_e7.x, _e7.y, 0.0, 1.0);
     return;
@@ -39,9 +38,7 @@ void main() {
     a_uv_1 = a_uv;
     a_pos_1 = a_pos;
     main_1();
-    vec2 _e7 = v_uv;
-    vec4 _e8 = unnamed.gen_gl_Position;
-    type_4 _tmp_return = type_4(_e7, _e8);
+    type_4 _tmp_return = type_4(v_uv, unnamed.gen_gl_Position);
     _vs2fs_location0 = _tmp_return.member;
     gl_Position = _tmp_return.gen_gl_Position;
     gl_Position.yz = vec2(-gl_Position.y, gl_Position.z * 2.0 - gl_Position.w);

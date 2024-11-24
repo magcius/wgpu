@@ -125,34 +125,22 @@ void test_matrix_within_struct_accesses()
     int idx = 1;
     Baz t = ConstructBaz(float3x2((1.0).xx, (2.0).xx, (3.0).xx));
 
-    int _e3 = idx;
-    idx = (_e3 - 1);
+    idx = (idx - 1);
     float3x2 l0_ = GetMatmOnBaz(baz);
     float2 l1_ = GetMatmOnBaz(baz)[0];
-    int _e14 = idx;
-    float2 l2_ = GetMatmOnBaz(baz)[_e14];
+    float2 l2_ = GetMatmOnBaz(baz)[idx];
     float l3_ = GetMatmOnBaz(baz)[0].y;
-    int _e25 = idx;
-    float l4_ = GetMatmOnBaz(baz)[0][_e25];
-    int _e30 = idx;
-    float l5_ = GetMatmOnBaz(baz)[_e30].y;
-    int _e36 = idx;
-    int _e38 = idx;
-    float l6_ = GetMatmOnBaz(baz)[_e36][_e38];
-    int _e51 = idx;
-    idx = (_e51 + 1);
+    float l4_ = GetMatmOnBaz(baz)[0][idx];
+    float l5_ = GetMatmOnBaz(baz)[idx].y;
+    float l6_ = GetMatmOnBaz(baz)[idx][idx];
+    idx = (idx + 1);
     SetMatmOnBaz(t, float3x2((6.0).xx, (5.0).xx, (4.0).xx));
     t.m_0 = (9.0).xx;
-    int _e66 = idx;
-    SetMatVecmOnBaz(t, (90.0).xx, _e66);
+    SetMatVecmOnBaz(t, (90.0).xx, idx);
     t.m_0[1] = 10.0;
-    int _e76 = idx;
-    t.m_0[_e76] = 20.0;
-    int _e80 = idx;
-    SetMatScalarmOnBaz(t, 30.0, _e80, 1);
-    int _e85 = idx;
-    int _e87 = idx;
-    SetMatScalarmOnBaz(t, 40.0, _e85, _e87);
+    t.m_0[idx] = 20.0;
+    SetMatScalarmOnBaz(t, 30.0, idx, 1);
+    SetMatScalarmOnBaz(t, 40.0, idx, idx);
     return;
 }
 
@@ -172,43 +160,30 @@ void test_matrix_within_array_within_struct_accesses()
     int idx_1 = 1;
     MatCx2InArray t_1 = ConstructMatCx2InArray(ZeroValuearray2_float4x2_());
 
-    int _e3 = idx_1;
-    idx_1 = (_e3 - 1);
+    idx_1 = (idx_1 - 1);
     float4x2 l0_1[2] = ((float4x2[2])nested_mat_cx2_.am);
     float4x2 l1_1 = ((float4x2)nested_mat_cx2_.am[0]);
     float2 l2_1 = nested_mat_cx2_.am[0]._0;
-    int _e20 = idx_1;
-    float2 l3_1 = __get_col_of_mat4x2(nested_mat_cx2_.am[0], _e20);
+    float2 l3_1 = __get_col_of_mat4x2(nested_mat_cx2_.am[0], idx_1);
     float l4_1 = nested_mat_cx2_.am[0]._0.y;
-    int _e33 = idx_1;
-    float l5_1 = nested_mat_cx2_.am[0]._0[_e33];
-    int _e39 = idx_1;
-    float l6_1 = __get_col_of_mat4x2(nested_mat_cx2_.am[0], _e39).y;
-    int _e46 = idx_1;
-    int _e48 = idx_1;
-    float l7_ = __get_col_of_mat4x2(nested_mat_cx2_.am[0], _e46)[_e48];
-    int _e55 = idx_1;
-    idx_1 = (_e55 + 1);
+    float l5_1 = nested_mat_cx2_.am[0]._0[idx_1];
+    float l6_1 = __get_col_of_mat4x2(nested_mat_cx2_.am[0], idx_1).y;
+    float l7_ = __get_col_of_mat4x2(nested_mat_cx2_.am[0], idx_1)[idx_1];
+    idx_1 = (idx_1 + 1);
     t_1.am = (__mat4x2[2])ZeroValuearray2_float4x2_();
     t_1.am[0] = (__mat4x2)float4x2((8.0).xx, (7.0).xx, (6.0).xx, (5.0).xx);
     t_1.am[0]._0 = (9.0).xx;
-    int _e77 = idx_1;
-    __set_col_of_mat4x2(t_1.am[0], _e77, (90.0).xx);
+    __set_col_of_mat4x2(t_1.am[0], idx_1, (90.0).xx);
     t_1.am[0]._0.y = 10.0;
-    int _e89 = idx_1;
-    t_1.am[0]._0[min(uint(_e89), 1u)] = 20.0;
-    int _e94 = idx_1;
-    __set_el_of_mat4x2(t_1.am[0], _e94, 1, 30.0);
-    int _e100 = idx_1;
-    int _e102 = idx_1;
-    __set_el_of_mat4x2(t_1.am[0], _e100, _e102, 40.0);
+    t_1.am[0]._0[min(uint(idx_1), 1u)] = 20.0;
+    __set_el_of_mat4x2(t_1.am[0], idx_1, 1, 30.0);
+    __set_el_of_mat4x2(t_1.am[0], idx_1, idx_1, 40.0);
     return;
 }
 
 float read_from_private(inout float foo_1)
 {
-    float _e1 = foo_1;
-    return _e1;
+    return foo_1;
 }
 
 float test_arr_as_arg(float a[5][10])
@@ -236,8 +211,7 @@ void assign_array_through_ptr_fn(inout float4 foo_2[2])
 
 uint fetch_arg_ptr_member(inout AssignToMember p_1)
 {
-    uint _e2 = p_1.x;
-    return _e2;
+    return p_1.x;
 }
 
 void assign_to_arg_ptr_member(inout AssignToMember p_2)
@@ -248,8 +222,7 @@ void assign_to_arg_ptr_member(inout AssignToMember p_2)
 
 uint fetch_arg_ptr_array_element(inout uint p_3[4])
 {
-    uint _e2 = p_3[1];
-    return _e2;
+    return p_3[1];
 }
 
 void assign_to_arg_ptr_array_element(inout uint p_4[4])

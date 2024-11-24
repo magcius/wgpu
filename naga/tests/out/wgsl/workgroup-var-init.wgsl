@@ -10,7 +10,6 @@ var<storage, read_write> output: array<u32, 512>;
 
 @compute @workgroup_size(1, 1, 1) 
 fn main() {
-    let _e3 = w_mem.arr;
-    output = _e3;
+    output = w_mem.arr;
     return;
 }

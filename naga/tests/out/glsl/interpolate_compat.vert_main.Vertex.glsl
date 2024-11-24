@@ -36,18 +36,17 @@ void main() {
     out_.perspective_centroid = 2197.0;
     out_.perspective_sample = 2744.0;
     out_.perspective_center = 2812.0;
-    FragmentInput _e39 = out_;
-    gl_Position = _e39.position;
-    _vs2fs_location0 = _e39._flat;
-    _vs2fs_location2 = _e39.flat_either;
-    _vs2fs_location3 = _e39._linear;
-    _vs2fs_location4 = _e39.linear_centroid;
-    _vs2fs_location6 = _e39.linear_sample;
-    _vs2fs_location7 = _e39.linear_center;
-    _vs2fs_location8 = _e39.perspective;
-    _vs2fs_location9 = _e39.perspective_centroid;
-    _vs2fs_location10 = _e39.perspective_sample;
-    _vs2fs_location11 = _e39.perspective_center;
+    gl_Position = out_.position;
+    _vs2fs_location0 = out_._flat;
+    _vs2fs_location2 = out_.flat_either;
+    _vs2fs_location3 = out_._linear;
+    _vs2fs_location4 = out_.linear_centroid;
+    _vs2fs_location6 = out_.linear_sample;
+    _vs2fs_location7 = out_.linear_center;
+    _vs2fs_location8 = out_.perspective;
+    _vs2fs_location9 = out_.perspective_centroid;
+    _vs2fs_location10 = out_.perspective_sample;
+    _vs2fs_location11 = out_.perspective_center;
     return;
 }
 

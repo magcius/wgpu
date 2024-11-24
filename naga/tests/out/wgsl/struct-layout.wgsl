@@ -32,10 +32,8 @@ fn no_padding_vert(input_1: NoPadding) -> @builtin(position) vec4<f32> {
 fn no_padding_comp() {
     var x: NoPadding;
 
-    let _e2 = no_padding_uniform;
-    x = _e2;
-    let _e4 = no_padding_storage;
-    x = _e4;
+    x = no_padding_uniform;
+    x = no_padding_storage;
     return;
 }
 
@@ -53,9 +51,7 @@ fn needs_padding_vert(input_3: NeedsPadding) -> @builtin(position) vec4<f32> {
 fn needs_padding_comp() {
     var x_1: NeedsPadding;
 
-    let _e2 = needs_padding_uniform;
-    x_1 = _e2;
-    let _e4 = needs_padding_storage;
-    x_1 = _e4;
+    x_1 = needs_padding_uniform;
+    x_1 = needs_padding_storage;
     return;
 }

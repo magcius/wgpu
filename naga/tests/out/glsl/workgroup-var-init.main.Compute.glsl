@@ -21,8 +21,7 @@ void main() {
     }
     memoryBarrierShared();
     barrier();
-    uint _e3[512] = w_mem.arr;
-    _group_0_binding_0_cs = _e3;
+    _group_0_binding_0_cs = w_mem.arr;
     return;
 }
 

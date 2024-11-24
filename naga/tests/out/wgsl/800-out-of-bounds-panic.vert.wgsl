@@ -20,15 +20,10 @@ var<private> frag_color: vec4<f32>;
 var<private> gl_Position: vec4<f32>;
 
 fn main_1() {
-    let _e7 = color_1;
-    frag_color = _e7;
-    let _e9 = global.view_matrix;
-    let _e10 = global_1.world_matrix;
+    frag_color = color_1;
     let _e12 = position_1;
-    gl_Position = ((_e9 * _e10) * vec4<f32>(_e12.x, _e12.y, 0f, 1f));
-    let _e20 = gl_Position;
-    let _e22 = gl_Position;
-    gl_Position.z = ((_e20.z + _e22.w) / 2f);
+    gl_Position = ((global.view_matrix * global_1.world_matrix) * vec4<f32>(_e12.x, _e12.y, 0f, 1f));
+    gl_Position.z = ((gl_Position.z + gl_Position.w) / 2f);
     return;
 }
 
@@ -37,7 +32,5 @@ fn main(@location(0) position: vec2<f32>, @location(1) color: vec4<f32>) -> Vert
     position_1 = position;
     color_1 = color;
     main_1();
-    let _e15 = frag_color;
-    let _e17 = gl_Position;
-    return VertexOutput(_e15, _e17);
+    return VertexOutput(frag_color, gl_Position);
 }

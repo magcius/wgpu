@@ -12,36 +12,28 @@ fn test_atomic_compare_exchange_i32_() {
     var exchanged: bool;
 
     loop {
-        let _e2 = i;
-        if (_e2 < SIZE) {
+        if (i < SIZE) {
         } else {
             break;
         }
         {
-            let _e6 = i;
-            let _e8 = atomicLoad((&arr_i32_[_e6]));
-            old = _e8;
+            old = atomicLoad((&arr_i32_[i]));
             exchanged = false;
             loop {
-                let _e12 = exchanged;
-                if !(_e12) {
+                if !(exchanged) {
                 } else {
                     break;
                 }
                 {
-                    let _e14 = old;
-                    let new_ = bitcast<i32>((bitcast<f32>(_e14) + 1f));
-                    let _e20 = i;
-                    let _e22 = old;
-                    let _e23 = atomicCompareExchangeWeak((&arr_i32_[_e20]), _e22, new_);
+                    let new_ = bitcast<i32>((bitcast<f32>(old) + 1f));
+                    let _e23 = atomicCompareExchangeWeak((&arr_i32_[i]), old, new_);
                     old = _e23.old_value;
                     exchanged = _e23.exchanged;
                 }
             }
         }
         continuing {
-            let _e27 = i;
-            i = (_e27 + 1u);
+            i = (i + 1u);
         }
     }
     return;
@@ -54,36 +46,28 @@ fn test_atomic_compare_exchange_u32_() {
     var exchanged_1: bool;
 
     loop {
-        let _e2 = i_1;
-        if (_e2 < SIZE) {
+        if (i_1 < SIZE) {
         } else {
             break;
         }
         {
-            let _e6 = i_1;
-            let _e8 = atomicLoad((&arr_u32_[_e6]));
-            old_1 = _e8;
+            old_1 = atomicLoad((&arr_u32_[i_1]));
             exchanged_1 = false;
             loop {
-                let _e12 = exchanged_1;
-                if !(_e12) {
+                if !(exchanged_1) {
                 } else {
                     break;
                 }
                 {
-                    let _e14 = old_1;
-                    let new_1 = bitcast<u32>((bitcast<f32>(_e14) + 1f));
-                    let _e20 = i_1;
-                    let _e22 = old_1;
-                    let _e23 = atomicCompareExchangeWeak((&arr_u32_[_e20]), _e22, new_1);
+                    let new_1 = bitcast<u32>((bitcast<f32>(old_1) + 1f));
+                    let _e23 = atomicCompareExchangeWeak((&arr_u32_[i_1]), old_1, new_1);
                     old_1 = _e23.old_value;
                     exchanged_1 = _e23.exchanged;
                 }
             }
         }
         continuing {
-            let _e27 = i_1;
-            i_1 = (_e27 + 1u);
+            i_1 = (i_1 + 1u);
         }
     }
     return;

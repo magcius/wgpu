@@ -13,8 +13,7 @@ VertexOutput_vs vs(float2 xy : LOC0)
     OurVertexShaderOutput vsOutput = (OurVertexShaderOutput)0;
 
     vsOutput.position = float4(xy, 0.0, 1.0);
-    OurVertexShaderOutput _e6 = vsOutput;
-    const OurVertexShaderOutput ourvertexshaderoutput = _e6;
+    const OurVertexShaderOutput ourvertexshaderoutput = vsOutput;
     const VertexOutput_vs ourvertexshaderoutput_1 = { ourvertexshaderoutput.texcoord, ourvertexshaderoutput.position };
     return ourvertexshaderoutput_1;
 }

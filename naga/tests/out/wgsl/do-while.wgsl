@@ -2,8 +2,7 @@ fn fb1_(cond: ptr<function, bool>) {
     loop {
         continue;
         continuing {
-            let _e1 = (*cond);
-            break if !(_e1);
+            break if !((*cond));
         }
     }
     return;

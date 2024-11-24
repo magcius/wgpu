@@ -16,8 +16,7 @@ var<private> unnamed: gl_PerVertex = gl_PerVertex(vec4<f32>(0f, 0f, 0f, 1f), 1f,
 var<private> a_pos_1: vec2<f32>;
 
 fn main_1() {
-    let _e6 = a_uv_1;
-    v_uv = _e6;
+    v_uv = a_uv_1;
     let _e7 = a_pos_1;
     unnamed.gl_Position = vec4<f32>(_e7.x, _e7.y, 0f, 1f);
     return;
@@ -28,7 +27,5 @@ fn main(@location(1) a_uv: vec2<f32>, @location(0) a_pos: vec2<f32>) -> VertexOu
     a_uv_1 = a_uv;
     a_pos_1 = a_pos;
     main_1();
-    let _e7 = v_uv;
-    let _e8 = unnamed.gl_Position;
-    return VertexOutput(_e7, _e8);
+    return VertexOutput(v_uv, unnamed.gl_Position);
 }

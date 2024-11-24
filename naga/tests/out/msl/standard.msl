@@ -40,8 +40,5 @@ fragment derivativesOutput derivatives(
     metal::float4 _e12 = metal::fwidth(foo);
     z = _e12;
     bool _e13 = test_any_and_all_for_bool();
-    metal::float4 _e14 = x;
-    metal::float4 _e15 = y;
-    metal::float4 _e17 = z;
-    return derivativesOutput { (_e14 + _e15) * _e17 };
+    return derivativesOutput { (x + y) * z };
 }

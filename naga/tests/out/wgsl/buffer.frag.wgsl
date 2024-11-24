@@ -15,11 +15,9 @@ fn main_1() {
     var a: u32;
     var b: u32;
 
-    let _e9 = testBuffer.data[0];
-    a = _e9;
+    a = testBuffer.data[0];
     testBuffer.data[1i] = 2u;
-    let _e19 = testBufferReadOnly.data[0];
-    b = _e19;
+    b = testBufferReadOnly.data[0];
     return;
 }
 

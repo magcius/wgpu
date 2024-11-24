@@ -5,12 +5,9 @@ fn main_1() {
     var c: f32;
     var d: f32;
 
-    let _e4 = a;
-    b = asinh(_e4);
-    let _e6 = a;
-    c = acosh(_e6);
-    let _e8 = a;
-    d = atanh(_e8);
+    b = asinh(a);
+    c = acosh(a);
+    d = atanh(a);
     return;
 }
 

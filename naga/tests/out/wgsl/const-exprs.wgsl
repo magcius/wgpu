@@ -35,15 +35,9 @@ fn non_constant_initializers() {
     var z: i32 = 70i;
     var out_3: vec4<i32>;
 
-    let _e2 = w;
-    x = _e2;
-    let _e4 = x;
-    y = _e4;
-    let _e8 = w;
-    let _e9 = x;
-    let _e10 = y;
-    let _e11 = z;
-    out_3 = vec4<i32>(_e8, _e9, _e10, _e11);
+    x = w;
+    y = x;
+    out_3 = vec4<i32>(w, x, y, z);
     return;
 }
 

@@ -65,12 +65,10 @@ vertex render_vertexOutput render_vertex(
     }
     const VertexInput v_in = { position_1, normal_1, texcoord };
     VertexOutput v_out = {};
-    metal::float4x4 _e6 = mvp_matrix;
-    v_out.position = v_in.position * _e6;
+    v_out.position = v_in.position * mvp_matrix;
     metal::float4 _e11 = do_lighting(v_in.position, v_in.normal);
     v_out.color = _e11;
     v_out.texcoord = v_in.texcoord;
-    VertexOutput _e14 = v_out;
-    const auto _tmp = _e14;
+    const auto _tmp = v_out;
     return render_vertexOutput { _tmp.position, _tmp.color, _tmp.texcoord };
 }

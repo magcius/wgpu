@@ -11,23 +11,14 @@ void main()
     float3 f3_ = (0.0).xxx;
     float4 f4_ = (0.0).xxxx;
 
-    int2 _e27 = i2_;
-    u2_ = asuint(_e27);
-    int3 _e29 = i3_;
-    u3_ = asuint(_e29);
-    int4 _e31 = i4_;
-    u4_ = asuint(_e31);
-    uint2 _e33 = u2_;
-    i2_ = asint(_e33);
-    uint3 _e35 = u3_;
-    i3_ = asint(_e35);
-    uint4 _e37 = u4_;
-    i4_ = asint(_e37);
-    int2 _e39 = i2_;
-    f2_ = asfloat(_e39);
-    int3 _e41 = i3_;
-    f3_ = asfloat(_e41);
-    int4 _e43 = i4_;
-    f4_ = asfloat(_e43);
+    u2_ = asuint(i2_);
+    u3_ = asuint(i3_);
+    u4_ = asuint(i4_);
+    i2_ = asint(u2_);
+    i3_ = asint(u3_);
+    i4_ = asint(u4_);
+    f2_ = asfloat(i2_);
+    f3_ = asfloat(i3_);
+    f4_ = asfloat(i4_);
     return;
 }

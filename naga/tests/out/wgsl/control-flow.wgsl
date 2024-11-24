@@ -127,8 +127,7 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
             pos = 1i;
         }
     }
-    let _e4 = pos;
-    switch _e4 {
+    switch pos {
         case 1: {
             pos = 0i;
             break;
@@ -152,8 +151,7 @@ fn main(@builtin(global_invocation_id) global_id: vec3<u32>) {
         default: {
         }
     }
-    let _e11 = pos;
-    switch _e11 {
+    switch pos {
         case 1: {
             pos = 0i;
             break;

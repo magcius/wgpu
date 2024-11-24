@@ -178,8 +178,7 @@ void main(uint3 global_id : SV_DispatchThreadID)
     do {
         pos = 1;
     } while(false);
-    int _e4 = pos;
-    switch(_e4) {
+    switch(pos) {
         case 1: {
             pos = 0;
             break;
@@ -211,8 +210,7 @@ void main(uint3 global_id : SV_DispatchThreadID)
             break;
         }
     }
-    int _e11 = pos;
-    switch(_e11) {
+    switch(pos) {
         case 1: {
             pos = 0;
             break;

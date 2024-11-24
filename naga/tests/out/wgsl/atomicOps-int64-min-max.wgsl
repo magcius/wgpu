@@ -14,17 +14,13 @@ var<uniform> input: u64;
 
 @compute @workgroup_size(2, 1, 1) 
 fn cs_main(@builtin(local_invocation_id) id: vec3<u32>) {
-    let _e3 = input;
-    atomicMax((&storage_atomic_scalar), _e3);
-    let _e7 = input;
-    atomicMax((&storage_atomic_arr[1]), (1lu + _e7));
+    atomicMax((&storage_atomic_scalar), input);
+    atomicMax((&storage_atomic_arr[1]), (1lu + input));
     atomicMax((&storage_struct.atomic_scalar), 1lu);
     atomicMax((&storage_struct.atomic_arr[1]), u64(id.x));
     workgroupBarrier();
-    let _e20 = input;
-    atomicMin((&storage_atomic_scalar), _e20);
-    let _e24 = input;
-    atomicMin((&storage_atomic_arr[1]), (1lu + _e24));
+    atomicMin((&storage_atomic_scalar), input);
+    atomicMin((&storage_atomic_arr[1]), (1lu + input));
     atomicMin((&storage_struct.atomic_scalar), 1lu);
     atomicMin((&storage_struct.atomic_arr[1]), u64(id.x));
     return;

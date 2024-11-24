@@ -173,8 +173,7 @@ kernel void main_(
             break;
         }
     }
-    int _e4 = pos;
-    switch(_e4) {
+    switch(pos) {
         case 1: {
             pos = 0;
             break;
@@ -206,8 +205,7 @@ kernel void main_(
             break;
         }
     }
-    int _e11 = pos;
-    switch(_e11) {
+    switch(pos) {
         case 1: {
             pos = 0;
             break;

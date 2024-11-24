@@ -23,8 +23,7 @@ void main() {
     bool x = false;
     float gain_x_100_ = 0.0;
     x = true;
-    float _e9 = gain_x_10_;
-    gain_x_100_ = (_e9 * 10.0);
+    gain_x_100_ = (gain_x_10_ * 10.0);
     store_override = gain;
     return;
 }

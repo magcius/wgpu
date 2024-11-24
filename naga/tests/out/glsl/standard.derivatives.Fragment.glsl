@@ -33,10 +33,7 @@ void main() {
     vec4 _e12 = fwidth(foo);
     z = _e12;
     bool _e13 = test_any_and_all_for_bool();
-    vec4 _e14 = x;
-    vec4 _e15 = y;
-    vec4 _e17 = z;
-    _fs2p_location0 = ((_e14 + _e15) * _e17);
+    _fs2p_location0 = ((x + y) * z);
     return;
 }
 
